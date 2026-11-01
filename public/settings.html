@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Account settings | Northstar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="brand" href="index.html"
+          ><span class="logo-placeholder">N</span><span>Northstar</span></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="browse.html">Browse</a
+          ><a href="cart.html">Cart <span class="cart-count">0</span></a>
+        </div>
+      </nav>
+    </header>
+    <main class="section container narrow">
+      <p class="eyebrow">ACCOUNT SETTINGS</p>
+      <h1>Your details</h1>
+      <p id="settings-message" class="form-message"></p>
+      <section id="settings-content" hidden>
+        <form id="profile-form" class="form-card">
+          <h2>Profile</h2>
+          <label>Name <input name="name" required /></label
+          ><label>Email <input name="email" type="email" disabled /></label
+          ><label>Phone number <input name="phone" type="tel" required /></label
+          ><button class="button">Save profile</button>
+        </form>
+        <section class="section">
+          <h2>Saved addresses</h2>
+          <form id="address-form" class="form-card">
+            <label>Address label<input name="label" required placeholder="e.g. Home, Work, Mum's house" /></label>
+            <div class="address-fields">
+  <label>Country/Region<select name="country" required><option value="Australia">Australia</option></select></label>
+  <label>Full name (First name and surname)<input name="fullName" autocomplete="name" required placeholder="Full name" /></label>
+  <label>Phone number<input name="contactPhone" type="tel" autocomplete="tel" required placeholder="e.g. 04XX XXX XXX" /><small class="field-hint">May be printed on the parcel label to assist delivery.</small></label>
+  <div class="address-field-group"><span class="address-group-title">Address</span>
+    <input name="street" autocomplete="address-line1" required placeholder="Street address, P.O. box, company name, c/o" aria-label="Street address" />
+    <input name="unit" autocomplete="address-line2" placeholder="Apt, Suite, Unit, Building, Floor (optional)" aria-label="Apartment or unit" />
+  </div>
+  <label>Postcode<input name="postcode" inputmode="numeric" autocomplete="postal-code" maxlength="4" pattern="[0-9]{4}" required placeholder="4-digit postcode" /></label>
+  <label>City/Suburb<input name="suburb" autocomplete="address-level2" required placeholder="Enter city or suburb" list="australian-suburbs" /></label>
+  <label>State/Territory<select name="state" autocomplete="address-level1" required><option value="">Choose state or territory</option><option value="NSW">New South Wales (NSW)</option><option value="VIC">Victoria (VIC)</option><option value="QLD">Queensland (QLD)</option><option value="WA">Western Australia (WA)</option><option value="SA">South Australia (SA)</option><option value="TAS">Tasmania (TAS)</option><option value="ACT">Australian Capital Territory (ACT)</option><option value="NT">Northern Territory (NT)</option></select></label>
+  <datalist id="australian-suburbs"><option value="Sydney"></option><option value="Chester Hill"></option><option value="Parramatta"></option><option value="Bankstown"></option><option value="Melbourne"></option><option value="Brisbane"></option><option value="Perth"></option><option value="Adelaide"></option><option value="Canberra"></option><option value="Hobart"></option><option value="Darwin"></option></datalist>
+  <label class="checkbox-label"><input name="isDefault" type="checkbox" /> Make this my default address</label>
+  <details class="address-instructions"><summary>Delivery instructions (optional)</summary><label class="instruction-label">Add preferences, notes, access codes and more<textarea name="instructions" rows="3" maxlength="400" placeholder="e.g. Leave at front door if safe"></textarea></label></details>
+</div>
+            <button class="button" type="submit">Add address</button>
+            <p id="address-message" class="form-message"></p>
+          </form>
+          <div id="saved-addresses" class="cart-items"></div>
+        </section>
+        <section class="danger-zone">
+          <h2>Delete account</h2>
+          <p>
+            This permanently removes your profile and saved addresses. Your completed orders remain
+            in the store records.
+          </p>
+          <form id="delete-account-form" class="form-card">
+            <label>Current password <input name="password" type="password" required /></label
+            ><button class="delete-account" type="submit">Delete my account</button>
+            <p id="delete-account-message" class="form-message"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container">© 2026 Northstar</div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

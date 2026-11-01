@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Orders | Northstar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-page-orders">
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="brand" href="index.html"
+          ><span class="logo-placeholder">N</span><span>Northstar</span></a
+        >
+        <div class="nav-links">
+          <a href="index.html">Home</a><a href="browse.html">Browse</a
+          ><a href="login.html" class="nav-login">Account</a>
+        </div>
+      </nav>
+    </header>
+    <nav class="admin-subnav" aria-label="Admin sections">
+      <a href="admin.html">Overview</a><a href="admin-branding.html">Brand</a
+      ><a href="admin-users.html">Users</a><a href="admin-orders.html">Orders</a
+      ><a href="admin-stock.html">Stock</a><a href="admin-products.html">Products</a
+      ><a href="admin-demand.html">Demand</a><a href="admin-settings.html">Settings</a>
+    </nav>
+    <main class="section container">
+      <p class="eyebrow">ADMIN</p>
+      <h1>Store controls</h1>
+      <p id="admin-message" class="form-message"></p>
+      <section id="admin-content" hidden>
+        <h2 id="admin-users">Users</h2>
+        <ul id="user-list" class="user-list"></ul>
+        <h2 id="active-orders">Active orders</h2>
+        <p class="section-copy">
+          Tap a customer name to see what to pack. Click “Order has been packed” to email the
+          customer that it is awaiting delivery. Then add the tracking number and mark it sent to
+          email the tracking details and move it to the archive.
+        </p>
+        <div id="order-list" class="cart-items"></div>
+        <h2 id="order-archive">Order archive</h2>
+        <div id="archive-list" class="cart-items"></div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container">© 2026 Northstar</div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

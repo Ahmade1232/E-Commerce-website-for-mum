@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Checkout | Northstar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar container">
+        <a class="brand" href="index.html"
+          ><span class="logo-placeholder">N</span><span>Northstar</span></a
+        >
+        <div class="nav-links">
+          <a href="browse.html">Browse</a
+          ><a href="cart.html">Cart <span class="cart-count">0</span></a
+          ><a href="login.html" class="nav-login">Account</a>
+        </div>
+      </nav>
+    </header>
+    <main class="section container narrow">
+      <p class="eyebrow">CHECKOUT</p>
+      <h1>Delivery details</h1>
+      <p id="checkout-user" class="section-copy"></p>
+      <div id="checkout-items" class="cart-items"></div>
+      <div class="cart-total">Total <strong id="checkout-total">$0.00</strong></div>
+      <form id="delivery-form" class="form-card">
+        <h2>Delivery address</h2>
+        <div class="address-fields">
+  <label>Country/Region<select name="country" required><option value="Australia">Australia</option></select></label>
+  <label>Full name (First name and surname)<input name="fullName" autocomplete="name" required placeholder="Full name" /></label>
+  <label>Phone number<input name="contactPhone" type="tel" autocomplete="tel" required placeholder="e.g. 04XX XXX XXX" /><small class="field-hint">May be printed on the parcel label to assist delivery.</small></label>
+  <div class="address-field-group"><span class="address-group-title">Address</span>
+    <input name="street" autocomplete="address-line1" required placeholder="Street address, P.O. box, company name, c/o" aria-label="Street address" />
+    <input name="unit" autocomplete="address-line2" placeholder="Apt, Suite, Unit, Building, Floor (optional)" aria-label="Apartment or unit" />
+  </div>
+  <label>Postcode<input name="postcode" inputmode="numeric" autocomplete="postal-code" maxlength="4" pattern="[0-9]{4}" required placeholder="4-digit postcode" /></label>
+  <label>City/Suburb<input name="suburb" autocomplete="address-level2" required placeholder="Enter city or suburb" list="australian-suburbs" /></label>
+  <label>State/Territory<select name="state" autocomplete="address-level1" required><option value="">Choose state or territory</option><option value="NSW">New South Wales (NSW)</option><option value="VIC">Victoria (VIC)</option><option value="QLD">Queensland (QLD)</option><option value="WA">Western Australia (WA)</option><option value="SA">South Australia (SA)</option><option value="TAS">Tasmania (TAS)</option><option value="ACT">Australian Capital Territory (ACT)</option><option value="NT">Northern Territory (NT)</option></select></label>
+  <datalist id="australian-suburbs"><option value="Sydney"></option><option value="Chester Hill"></option><option value="Parramatta"></option><option value="Bankstown"></option><option value="Melbourne"></option><option value="Brisbane"></option><option value="Perth"></option><option value="Adelaide"></option><option value="Canberra"></option><option value="Hobart"></option><option value="Darwin"></option></datalist>
+  <label class="checkbox-label"><input name="isDefault" type="checkbox" /> Make this my default address</label>
+  <details class="address-instructions"><summary>Delivery instructions (optional)</summary><label class="instruction-label">Add preferences, notes, access codes and more<textarea name="instructions" rows="3" maxlength="400" placeholder="e.g. Leave at front door if safe"></textarea></label></details>
+</div>
+        <small class="address-hint">Your delivery address is checked against a map database before your order is placed.</small>
+        <button class="button" type="submit">Place order</button>
+        <p id="delivery-message" class="form-message"></p>
+      </form>
+    </main>
+    <footer class="site-footer"><div class="container">© 2026 Northstar</div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
