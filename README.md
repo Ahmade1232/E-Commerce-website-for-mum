@@ -1,4 +1,4 @@
-# Northstar Store
+# Online Web Store
 
 ## Run locally
 
